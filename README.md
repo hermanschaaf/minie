@@ -13,7 +13,7 @@ built from a common base.
 
 The proof of concept implementation based directly on micro with the following modifications
 
-1. cmd/micro/_.go has been moved to the root project folder with the package rename from main to minie
+1. cmd/micro/\*.go has been moved to the root project folder with the package rename from main to minie
 2. references to .config/micro are changes to refer to the built application's name (e.g. replaced with path.Base(os.Args[0]))
 3. "func main" in micro.go is renamed "func Micro"
 4. cmds/micro/micro.go is create as a "main" package with the "func main" invoking minie.Micro()
