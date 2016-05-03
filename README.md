@@ -16,8 +16,8 @@ The proof of concept implementation based directly on micro with the following m
 1. cmd/micro/_.go has been moved to the root project folder with the package rename from main to minie
 2. references to .config/micro are changes to refer to the built application's name (e.g. replaced with path.Base(os.Args[0]))
 3. "func main" in micro.go is renamed "func CliEditor"
-4. cmds/micro/micro.go is create as a "main" package with the "func main" invoking minie.CliEditor()
-5. go run cmds/micro/micro.go yeilds a version of micro with the new file organization
+4. cmds/micro/micro.go is create as a "main" package with the "func main" invoking minie.Micro()
+5. go run cmds/micro/micro.go yeilds a version of micro implemented as an embedded package named minie
 
 This process has been automated in _scripts/mk-proof-of-concept.sh_.
 
