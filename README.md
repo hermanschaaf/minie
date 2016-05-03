@@ -5,9 +5,9 @@ Minimal Editor, a library for embedable terminal based text editing
 
 This project was inspired by Zachary Yedidia's [micro](https://github.com/zyedidia/micro) text editor project.
 The reason for a separate project is one of scope and purpose. _minie_ is a proof of concept minimal editor library
-for creating embedded text editors for using terminal based applications such as REPLs written in Go. Where
+for creating embedded text editors for terminal based applications such as REPLs written in Go. Where
 _micro_ is focusing on producing one editor, minie is focused on enabling a wide variety of editors to be
-built.
+built from a common base.
 
 ## Proof of concept
 
