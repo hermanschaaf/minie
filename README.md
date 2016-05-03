@@ -11,7 +11,7 @@ built from a common base.
 
 ## Proof of concept
 
-The proof of concept implementation based directly on micro with the following modifications
+The proof of concept implementation based directly my fork of [micro](https://github.com/rsdoiel/micro) with the following modifications
 
 1. cmd/micro/\*.go has been moved to the root project folder with the package rename from main to minie
 2. references to .config/micro are changes to refer to the built application's name (e.g. replaced with path.Base(os.Args[0]))
@@ -21,5 +21,18 @@ The proof of concept implementation based directly on micro with the following m
 
 This process has been automated in _scripts/mk-proof-of-concept.sh_.
 
+## Someday Maybe list
 
+* Update scripts to work directly from upstream rather than my fork
+* Come up with a simple way to extend codebase with Go native code (sub-packages and a registeration function?)
+* Remove the requirement to generate runtime.go
+* Organize the codebase around simple abstractions
+    * Registeration of extensions (Go native and JavaScript)
+    * Buffer operations (e.g. anything that can be bound to a key or mouse actions)
+    * Binding actions
+    * Input (key/mouse events)
+    * View
+    * Screen
+    * Support non-plain text file types
+* Create a minie editor instance with my preferred keybinds and functions by default
 
