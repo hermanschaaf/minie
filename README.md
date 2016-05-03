@@ -23,6 +23,7 @@ This process has been automated in _scripts/mk-proof-of-concept.sh_.
 
 ## Someday Maybe list
 
+* make sure mouse/key bindings are touch friendly using a SSH client on a tablet
 * Update scripts to work directly from upstream rather than my fork
 * Come up with a simple way to extend codebase with Go native code (sub-packages and a registeration function?)
 * Remove the requirement to generate runtime.go
