@@ -8,6 +8,7 @@ ls -1 ./*.go | while read ITEM; do
    if [ "$ITEM" = "./micro.go" ]; then
       echo "Creating a modified $ITEM"
       sed -i.bak -e 's/package main/package minie/' \
+          -e 's/Version = /\/\/ Version = /' \
           -e 's/configDir = xdgHome + "\/micro"/configDir = path.Join(xdgHome, path.Base(os.Args[0]))/' \
           -e 's/func main/func Micro/' \
           $ITEM
