@@ -23,6 +23,30 @@ _testmain.go
 *.test
 *.prof
 
-# Project specific excludes
+# Ignore proof of concept micro files
+bindings.go
+buffer.go
+colorscheme.go
+command.go
+cursor.go
+eventhandler.go
+gotolineno.go
+help.go
+highlighter.go
+messenger.go
+micro.go
+runtime.go
+search.go
+settings.go
+stack.go
+stack_test.go
+statusline.go
+toggleselection.go
+util.go
+util_test.go
+view.go
 micro
+cmds/micro/micro.go
+
+# Project specific excludes
 *~
