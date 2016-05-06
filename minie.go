@@ -1,5 +1,4 @@
-//
-// minie is a simple terminal based editor. It is an example of one editor implementation from the minie package.
+// Package minie provides a basic library to build simple text editors with.
 //
 // Copyright (c) 2016, R. S. Doiel
 // All rights reserved.
@@ -29,50 +28,6 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-package main
+package minie
 
-import (
-	"flag"
-	"fmt"
-	"os"
-	"path"
-
-	// Minie package
-	"github.com/rsdoiel/minie"
-)
-
-var (
-	showHelp    bool
-	showVersion bool
-)
-
-func init() {
-	flag.BoolVar(&showHelp, "h", false, "display help information")
-	flag.BoolVar(&showVersion, "v", false, "display version information")
-}
-
-func main() {
-	flag.Parse()
-	appname := path.Base(os.Args[0])
-	if showHelp == true {
-		fmt.Printf(`
- USAGE: %s [OPTIONS] FILENAME [FILENAME ...]
-
- This is a simple editor demonstrating the minie package.
-
-`, appname)
-
-		fmt.Printlg.VisitAll(func(f *flag.Flag) {
-			fmt.Printf("    -%s  (defaults to %s) %s\n", f.Name, f.Value, f.Usage)
-		})
-		fmt.Printf("\nVersion %s\n", minie.Version)
-		os.Exit(0)
-	}
-
-	if showVersion == true {
-		fmt.Printf("\nVersion %s\n", minie.Version)
-		os.Exit(0)
-	}
-
-	fmt.Printf("This is a placeholder for %s\n", appname)
-}
+const Version = "0.0.0"

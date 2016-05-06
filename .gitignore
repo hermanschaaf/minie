@@ -50,3 +50,4 @@ cmds/micro/micro.go
 
 # Project specific excludes
 *~
+minie
