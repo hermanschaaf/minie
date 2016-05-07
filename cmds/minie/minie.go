@@ -1,5 +1,6 @@
 //
-// minie is a simple terminal based editor. It is an example of one editor implementation from the minie package.
+// minie is a simple terminal based editor. It is an example of one
+// editor implementation from the minie package.
 //
 // Copyright (c) 2016, R. S. Doiel
 // All rights reserved.
@@ -56,13 +57,13 @@ func main() {
 	appname := path.Base(os.Args[0])
 	if showHelp == true {
 		fmt.Printf(`
- USAGE: %s [OPTIONS] FILENAME [FILENAME ...]
+ USAGE: %s [OPTIONS] FILENAME
 
  This is a simple editor demonstrating the minie package.
 
 `, appname)
 
-		fmt.Printlg.VisitAll(func(f *flag.Flag) {
+		flag.VisitAll(func(f *flag.Flag) {
 			fmt.Printf("    -%s  (defaults to %s) %s\n", f.Name, f.Value, f.Usage)
 		})
 		fmt.Printf("\nVersion %s\n", minie.Version)
@@ -70,9 +71,16 @@ func main() {
 	}
 
 	if showVersion == true {
-		fmt.Printf("\nVersion %s\n", minie.Version)
+		fmt.Printf("Version %s\n", minie.Version)
 		os.Exit(0)
 	}
 
-	fmt.Printf("This is a placeholder for %s\n", appname)
+	args := flag.Args()
+	if len(args) == 0 {
+		fmt.Println("Read from standard in")
+	} else {
+		for _, fname := range args {
+			fmt.Printf("Read from %s\n", fname)
+		}
+	}
 }

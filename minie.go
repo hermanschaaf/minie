@@ -1,3 +1,4 @@
+//
 // Package minie provides a basic library to build simple text editors with.
 //
 // Copyright (c) 2016, R. S. Doiel

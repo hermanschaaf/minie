@@ -8,7 +8,7 @@ ls -1 ./*.go | while read ITEM; do
    if [ "$ITEM" = "./micro.go" ]; then
       echo "Creating a modified $ITEM"
       sed -i.bak -e 's/package main/package minie/' \
-          -e 's/Version = /\/\/ Version = /' \
+          -e 's/Version = "Unknown"/\/\/ Version = "Unknown"/' \
           -e 's/configDir = xdgHome + "\/micro"/configDir = path.Join(xdgHome, path.Base(os.Args[0]))/' \
           -e 's/func main/func Micro/' \
           $ITEM
@@ -35,5 +35,16 @@ CODE
 echo "Removing up .bak file"
 /bin/rm *.bak
 
-echo "Building an experimental micro"
-go build cmds/micro/micro.go
+cat <<EOF
+
+ Building an experimental micro
+
+    go build cmds/micro/micro.go
+
+ Building an experimental minie
+
+    go build cmds/minie/minie.go
+
+EOF
+
+
