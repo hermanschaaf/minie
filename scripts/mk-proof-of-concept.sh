@@ -1,7 +1,12 @@
 #!/bin/bash
 
-echo "Copying code into minie from github.com/rsdoiel/micro"
-cp -v $HOME/src/github.com/rsdoiel/micro/cmd/micro/*.go ./
+if [ -d $HOME/src/github.com/zyedidia/micro ]; then
+    echo "Copying code into minie from github.com/rsdoiel/micro"
+    cp -v $HOME/src/github.com/zyedidia/micro/cmd/micro/*.go ./
+else
+    echo "Fetching micro from Github"
+    go get github.com/zyedidia/micro
+fi
 
 echo "Renaming package main to package minie"
 ls -1 ./*.go | while read ITEM; do

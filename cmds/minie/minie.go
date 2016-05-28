@@ -75,12 +75,5 @@ func main() {
 		os.Exit(0)
 	}
 
-	args := flag.Args()
-	if len(args) == 0 {
-		fmt.Println("Read from standard in")
-	} else {
-		for _, fname := range args {
-			fmt.Printf("Read from %s\n", fname)
-		}
-	}
+	minie.Micro()
 }
